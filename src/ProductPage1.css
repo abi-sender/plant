@@ -1,0 +1,263 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  background: #f5f5f5;
+}
+
+.product1-container {
+  width: 90%;
+  margin: 30px auto;
+  display: flex;
+  gap: 50px;
+}
+
+.product1-image {
+  flex: 1;
+
+}
+
+.product1-image img {
+  width: 100%;
+  height: 530px;
+  object-fit: cover;
+}
+
+.product1-details {
+flex: 1;
+}
+
+.breadcrumb1 {
+color: #666;
+margin-bottom: 2px;
+margin-right: 26%;
+}
+.breadcrumb1 a{
+    text-decoration: none;
+    color: #666;
+}
+
+.category1 {
+  color: #8bc34a;
+  font-size: 18px;
+  margin-right: 75%;
+}
+
+.product1-details h1 {
+  font-size: 20px;
+  margin-bottom: 5px;
+  margin-right: 70%;
+}
+
+.product1-details h2 {
+  font-size: 18px;
+margin-bottom: 5px;
+margin-right: 60%;
+  color: #222;
+}
+ 
+
+.product1-details h2 span {
+  font-size: 24px;
+  font-weight: normal;
+}
+
+.description1 {
+  color: #555;
+  line-height: 1.2;
+  margin-bottom: 25px;
+  font-size: 15px;
+}
+
+.cart-section1 {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.cart-section1 input {
+  width: 70px;
+  height: 45px;
+  text-align: center;
+  font-size: 18px;
+}
+
+.cart-section1 button {
+  padding: 12px 30px;
+  border: none;
+  background: #8bc34a;
+  color: white;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.category-text1 {
+  margin: 20px 0;
+  font-size: 18px;
+}
+
+.category-text1 span {
+  color: #8bc34a;
+}
+
+.checkout-box1 {
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.checkout-box1 h3 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.cards1 {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.cards1 img {
+  width: 60px;
+  height: 40px;
+}
+
+.tabs-container1 {
+  width: 95%;
+  margin: 30px auto;
+  font-family: Arial, sans-serif;
+}
+
+.tabs-header1 {
+  display: flex;
+  border-bottom: 1px solid #ddd;
+}
+
+.tabs-header1 button {
+  background: transparent;
+  border: none;
+  padding: 15px 25px;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.tabs-header1 button.active {
+  border-top: 3px solid #8bc34a;
+}
+
+.tab-content1 {
+  padding: 30px 0;
+}
+
+.tab-content1 p {
+  line-height: 1.1;
+  margin-bottom: 20px;
+  color: #444;
+  font-size: 18px;
+}
+
+.review-box1 {
+  border: 1px solid #ddd;
+  padding: 30px;
+  margin-top: 20px;
+}
+
+.review-box1 h2 {
+  margin-bottom: 10px;
+  font-weight: 500;
+  margin-right: 55%;
+}
+.review-box1 p{
+  margin-right: 52%;
+  font-size: 15px;
+}
+.yet1
+{
+  margin-right: 75%;
+}
+
+.review-box1 label {
+  display: block;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+.label1
+{
+  display: flex;
+
+}
+.review1
+{
+  margin-right: 87%;
+} 
+
+.stars1 {
+  font-size: 30px;
+  color: #777;
+  margin-top: 18px;
+}
+
+textarea,
+input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+.input-row1 {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.input-row1 div {
+  flex: 1;
+}
+
+.checkbox1 {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.checkbox1 input {
+  width: 18px;
+  height: 18px;
+}
+
+.submit-btn1 {
+  margin-top: 25px;
+  padding: 12px 35px;
+  border: none;
+  border-radius: 30px;
+  background: #8bc34a;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.submit-btn1:hover {
+  opacity: 0.9;
+}
+.related1
+{
+  display: grid;
+  grid: auto/auto auto auto ;
+}
+.related1 img{
+  width: 70%;
+}
+.relatedproducts1 h1
+{
+margin-right: 68%;
+font-size: 200%;
+}

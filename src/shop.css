@@ -1,0 +1,94 @@
+.shop
+{
+    background:linear-gradient(rgba(0, 0, 0, 0.45),rgba(0, 0, 0, 0.45)), url("./assets/shop.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+
+}
+.shop h1
+{
+text-align: center;
+padding: 50px;
+color: white;
+
+}
+.res
+{
+    display:grid;
+    grid: auto/auto auto;
+    gap: 600px;
+    margin-top: 150px;
+}
+.res p{
+    font-size: 20px;
+}
+.imagegrid
+{
+    display: grid;
+    grid: auto/auto auto auto ;
+    gap: 10px;
+   margin-top: 50px;
+
+
+}
+.imagegrid img
+{
+    width: 300px;
+}
+.imagegrid button
+{
+     padding: 12px 30px;
+  border: none;
+  background: #8bc34a;
+  color: white;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 18px;
+}
+select
+{
+    border: none;
+    background-color: transparent;
+    font-size: 15px;
+}
+.your
+{
+   width: 100%;
+  min-height: 50px;
+
+  background:linear-gradient(rgba(0, 0, 0, 0.45),rgba(0, 0, 0, 0.45)), url("./assets/plant.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}.your div
+{
+   text-align: center;
+  color: white;
+  padding: 20px;
+}
+.your h1{
+    color: white;
+}
+.your p {
+  font-size: 22px;
+  margin-bottom: 25px;
+  line-height: 1.6;
+}
+
+.your button {
+  padding: 18px 40px;
+  border: 1px solid white;
+  border-radius: 40px;
+  background: transparent;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+

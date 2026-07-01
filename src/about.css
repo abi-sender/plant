@@ -1,0 +1,206 @@
+.backgroundimage
+{
+    background:linear-gradient(rgba(0, 0, 0, 0.45),rgba(0, 0, 0, 0.45)), url("./assets/About.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 410px;
+}
+ h3{
+    padding-top: 60px;
+    font-size: 18px;
+    color: white;
+}
+.backgroundimage h1
+{
+    font-size: 70px;
+    line-height: 1;
+    color: white;
+}
+.bag-icon{
+  cursor:pointer;
+  font-size:24px;
+}
+
+.provi
+{
+    display: flex;
+}
+.ict
+{
+    font-size: 15px;
+    font-style: italic;
+}
+.founder
+{
+    margin-top: 20px;
+    margin-left: 20px;
+    display: flex;
+    gap: 20px;
+}
+.he
+{
+    margin-top: 25px;
+}
+.group p
+{
+    margin-left: 18px;
+ font-size: 17px;
+}
+.group h1
+{
+    margin-right: 260px;
+    font-size: 40px;
+    line-height: 1.1;   
+}
+.we h1
+{
+line-height: 1.1;
+}
+.we
+{
+    background-color: rgb(234, 223, 203);
+    margin-right: 10%;
+    width: 100%;
+padding-bottom: 1%;
+}
+.we h1{
+    font-size: 35px;
+    padding-top: 5%;
+}
+.box
+{
+    display: grid;
+    grid: auto/auto auto auto ;
+    gap: 5%;
+    margin-top: 5%;
+
+}
+.lu-icon
+{
+   width: 100px;
+height: 70px;
+  background-color: slategray;
+  border: 1px solid slategray;
+  border-radius: 50%;
+  color: white;
+  margin-left: 30%;
+  padding-top: 2%;
+  margin-bottom: 5px;
+}
+.flex
+{
+    display: flex;
+    gap:2px;
+    margin-left: -10%;
+    line-height: 1.1;
+}
+
+.flex1
+{
+    display: flex;
+    gap: 2px;
+    margin-left: -10%;
+}
+.flex2
+{
+    display: flex;
+    gap: 2px;
+    margin-left: -10%;
+}
+.flex3
+{
+    display: flex;
+    gap: 2px;
+    margin-left: -10%;
+}
+.flex4
+{
+    display: flex;
+    gap: 2px;
+    margin-left: -10%;
+}
+.flex5
+{
+    display: flex;
+    gap: 2px;
+    margin-left: -10%;
+}
+.check
+{
+    display: grid;
+    grid: auto/auto auto;
+    margin-left: 15%;
+}
+.fa
+{
+    display: flex;
+    gap: 1%;
+}
+.faicon
+{
+    color: green;
+}
+.mission
+{
+    display: flex;
+}
+.block
+{
+    display: block;
+}
+.block h1,p
+{
+    line-height: 1.1;
+}
+.img 
+{
+    margin-top: 1%;
+}
+.block p 
+{
+    font-size: 19.3px;
+}
+.block h1
+{
+    font-size: 30px;
+}
+.ctas-section{
+   width: 100%;
+  min-height: 50px;
+
+  background:linear-gradient(rgba(0, 0, 0, 0.45),rgba(0, 0, 0, 0.45)), url("./assets/plant.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay1{
+  text-align: center;
+  color: white;
+  padding: 20px;
+}
+
+.overlay1 h2{
+  font-size:60px;
+  margin-bottom:20px;
+  color: white;
+}
+
+.overlay1 p{
+  font-size:22px;
+  margin-bottom:25px;
+}
+
+.overlay1 button{
+  padding:18px 40px;
+  border:1px solid white;
+  border-radius:40px;
+  background:transparent;
+  color:white;
+  cursor:pointer;
+}
