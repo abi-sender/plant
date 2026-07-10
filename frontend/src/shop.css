@@ -1,0 +1,131 @@
+/* navbar section h1 */
+.shop
+{
+    background:linear-gradient(rgba(0, 0, 0, 0.45),rgba(0, 0, 0, 0.45)), url("./assets/shop.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+
+}
+.shop h1
+{
+text-align: center;
+padding: 50px;
+color: white;
+}
+
+/* product */
+.res{
+    width:90%;
+    max-width:1200px;
+    margin:50px auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.res select{
+    padding:10px 15px;
+    border:1px solid #ccc;
+    border-radius:6px;
+}
+
+/* product list */
+.imagegrid{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:30px;
+}
+
+.card{
+    background:#fff;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+    transition:.3s;
+    text-align:center;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card img{
+    width:100%;
+    height:280px;
+    object-fit:cover;
+}
+
+.card h2{
+    margin:15px 0 8px;
+}
+
+.card small{
+    color:#777;
+}
+
+.card p{
+    margin:12px 0;
+    color:#2e7d32;
+    font-weight:bold;
+    font-size:18px;
+}
+
+.card button{
+    margin-bottom:20px;
+    padding:12px 28px;
+    border:none;
+    background:#2e7d32;
+    color:#fff;
+    border-radius:30px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.card button:hover{
+    background:#1b5e20;
+}
+/* center vist page */
+.your
+{
+   width: 100%;
+  min-height: 50px;
+  background:linear-gradient(rgba(0, 0, 0, 0.45),rgba(0, 0, 0, 0.45)), url("./assets/plant.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10%;
+}
+.your div
+{
+   text-align: center;
+  color: white;
+  padding: 20px;
+}
+.your h1{
+    color: white;
+}
+.your p {
+  font-size: 22px;
+  margin-bottom: 25px;
+  line-height: 1.6;
+}
+
+.your button {
+  padding: 18px 40px;
+  border: 1px solid white;
+  border-radius: 40px;
+  background: transparent;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
