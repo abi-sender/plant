@@ -14,77 +14,72 @@ import pr from "./assets/product-03.jpg";
 import plant from './assets/product-05.jpg';
 import plant1 from './assets/product-04.jpg';
 import { useDispatch, useSelector } from "react-redux";
-import { Addcart, Decrementqty, Incrementqty, Removecart, TotalAmount } from "./slice";
-
+import { SetCart, TotalAmount } from "./slice";
 function Landingpage() {
      const [cartOpen, setCartOpen] = useState(false);
 
-     const handleAddCart = async (item) => {
-  // 1. Update Redux
-  dispatch(Addcart(item));
-
-  // 2. Save to MongoDB
-  await fetch("http://localhost:5000/addcart", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      productId: item.id,
-      title: item.title,
-      name: item.name,
-      image: item.image,
-      price: item.price,
-    }),
-  });
-  const getCart = async () => {
+    const handleAddCart = async (item) => {
   try {
-    const res = await fetch("http://localhost:5000/cart");
+    const res = await fetch("https://plant-1-4iyl.onrender.com/addcart", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        productId: item.id,
+        title: item.title,
+        name: item.name,
+        image: item.image,
+        price: item.price,
+      }),
+    });
+
     const data = await res.json();
 
-    setCart(data);
+    console.log("Response:", data);
+
+    getCart();
+  } catch (err) {
+    console.log(err);
+  }
+};
+const getCart = async () => {
+  try {
+    const res = await fetch("https://plant-1-4iyl.onrender.com/cart");
+    const data = await res.json();
+
+    dispatch(SetCart(data)); // or setCart(data)
   } catch (err) {
     console.log(err);
   }
 };
 
+const increaseQty = async (id) => {
+  await fetch(`https://plant-1-4iyl.onrender.com/increase/${id}`, {
+    method: "PUT",
+  });
+
+  getCart();
+};
+
+const decreaseQty = async (id) => {
+  await fetch(`https://plant-1-4iyl.onrender.com/decrease/${id}`, {
+    method: "PUT",
+  });
+
+  getCart();
+};
+
+const deleteCart = async (id) => {
+  await fetch(`https://plant-1-4iyl.onrender.com/delete/${id}`, {
+    method: "DELETE",
+  });
+
+  getCart();
+};
 useEffect(() => {
   getCart();
 }, []);
-const increaseQty = async (id) => {
-  try {
-    await fetch(`http://localhost:5000/increase/${id}`, {
-      method: "PUT",
-    });
-
-    getCart();
-  } catch (err) {
-    console.log(err);
-  }
-};
-const decreaseQty = async (id) => {
-  try {
-    await fetch(`http://localhost:5000/decrease/${id}`, {
-      method: "PUT",
-    });
-
-    getCart();
-  } catch (err) {
-    console.log(err);
-  }
-};
-const deleteCart = async (id) => {
-  try {
-    await fetch(`http://localhost:5000/cart/${id}`, {
-      method: "DELETE",
-    });
-
-    getCart();
-  } catch (err) {
-    console.log(err);
-  }
-};
-};
 // redux
 const { cart,totalAmount } = useSelector((state) => state.cart);
 const dispatch = useDispatch();
@@ -124,21 +119,21 @@ useEffect(() => {
  ];
  const product1=[
 {
-  id:1,
+  id:4,
   image:plant,
   title:"Desert Bloom",
   name:"Indoor Plant",
   price:700,
 },
 {
-  id:2,
+  id:5,
   image:plant1,
   title:"Golden Glow",
   name:"Indoor Plant",
   price:800,
 },
 {
-  id:3,
+  id:6,
   image:pr,
   title:"Silver Mist",
   name:"Indoor Plant",
@@ -245,16 +240,16 @@ useEffect(() => {
         
   {products.map((item) => (
     <div className="card" key={item.id}>
-       <Link to="/product">
-        <img src={item.image} alt="" />
-        <p>{item.title}</p>
-        <small>{item.name}</small>
-        <p> ₹{item.price}</p>        
-     
+      <Link to="/product">
+  <img src={item.image} alt="" />
+  <p>{item.title}</p>
+  <small>{item.name}</small>
+  <p>₹{item.price}</p>
+</Link>
+
 <button onClick={() => handleAddCart(item)}>
   Add Cart
 </button>
-</Link>
     </div>
   ))}
 </div>
@@ -362,9 +357,9 @@ useEffect(() => {
         <small>{item.name}</small>
         <p>₹{item.price}</p>
 
-        <button onClick={() => dispatch(Addcart(item))}>
-          Add Cart
-        </button>
+       <button onClick={() => handleAddCart(item)}>
+  Add Cart
+</button>
       </div>
     ))}
   </div>
@@ -519,18 +514,20 @@ useEffect(() => {
     <p>No products in the cart.</p>
   ) : (
     cart.map((item) => (
-      <div  className="cart-item" key={item.id}>
+      <div  className="cart-item" key={item._id}>
        <img src={item.image} alt="" />
         <div className="cart-info">
         <p>{item.title}</p>
         <small>{item.name}</small>
         <p>₹{item.price}</p>  
-        <button onClick={()=>dispatch(Incrementqty(item.id))}>+</button>
+<button onClick={() => increaseQty(item._id)}>+</button>
         <span>{item.qty}</span>
-        <button onClick={()=>dispatch(Decrementqty(item.id))}>-</button>
+<button onClick={() => decreaseQty(item._id)}>-</button>
 
         
-        <button onClick={() => dispatch(Removecart(item.id))}>Remove</button>
+<button onClick={() => deleteCart(item._id)}>
+  Remove
+</button>
 <p className="subtotal"> SubTotal: ₹{item.price * item.qty}</p>
 
 </div>
