@@ -14,7 +14,7 @@ import pr from "./assets/product-03.jpg";
 import plant from './assets/product-05.jpg';
 import plant1 from './assets/product-04.jpg';
 import { useDispatch, useSelector } from "react-redux";
-import { SetCart, TotalAmount } from "./slice";
+import { SetCart } from "./slice";
 function Landingpage() {
      const [cartOpen, setCartOpen] = useState(false);
 
@@ -38,7 +38,7 @@ function Landingpage() {
 
     console.log("Response:", data);
 
-    getCart();
+  await getCart();
   } catch (err) {
     console.log(err);
   }
@@ -55,43 +55,51 @@ const getCart = async () => {
 };
 
 const increaseQty = async (id) => {
-  await fetch(`https://plant-1-4iyl.onrender.com/increase/${id}`, {
-    method: "PUT",
-  });
+  try {
+    await fetch(`https://plant-1-4iyl.onrender.com/increase/${id}`, {
+      method: "PUT",
+    });
 
-  getCart();
+   await getCart();
+  } catch (err) {
+    console.log(err);
+  }
 };
-
 const decreaseQty = async (id) => {
-  await fetch(`https://plant-1-4iyl.onrender.com/decrease/${id}`, {
-    method: "PUT",
-  });
+  try {
+    await fetch(`https://plant-1-4iyl.onrender.com/decrease/${id}`, {
+      method: "PUT",
+    });
 
-  getCart();
+    await getCart();
+  } catch (err) {
+    console.log(err);
+  }
 };
 
 const deleteCart = async (id) => {
-  await fetch(`https://plant-1-4iyl.onrender.com/delete/${id}`, {
-    method: "DELETE",
-  });
+  try {
+    await fetch(`https://plant-1-4iyl.onrender.com/delete/${id}`, {
+      method: "DELETE",
+    });
 
-  getCart();
+   await getCart();
+  } catch (err) {
+    console.log(err);
+  }
 };
+const dispatch = useDispatch();
+
+const { cart } = useSelector((state) => state.cart);
+
+const totalAmount = cart.reduce(
+  (total, item) => total + item.price * item.qty,
+  0
+);
+
 useEffect(() => {
   getCart();
-}, []);
-// redux
-const { cart,totalAmount } = useSelector((state) => state.cart);
-const dispatch = useDispatch();
-useEffect(()=>
-  {
-  dispatch(TotalAmount());
-},[cart,dispatch]);
-
-useEffect(() => {
-  localStorage.setItem("cart", JSON.stringify(cart));
-}, [cart]);
-
+}, [dispatch]);
  const products=[
   {
      id: 1,
@@ -533,8 +541,8 @@ useEffect(() => {
 </div>
 </div>
 )))}
-<h2 className="total">Total Amount: ₹{totalAmount}</h2>
-</div>
+<h2 className="total"> Total Amount: ₹{totalAmount}
+</h2></div>
 <div className="cart-footer">
 <button className="continue-btn" onClick={() => setCartOpen(false)}>Continue Shopping</button>
 </div>
